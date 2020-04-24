@@ -153,6 +153,16 @@ module.exports = function(webpackEnv) {
     }
     return loaders;
   };
+  // 添加less-loader
+  const getLessLoaderUse = (cssOptions, lessOptions) => {
+    const loaders = getStyleLoaders(cssOptions, 'less-loader');
+    loaders.splice(loaders.length - 1, 1,
+      {
+        loader: require.resolve('less-loader'),
+        options: lessOptions
+      });
+    return loaders;
+  };
 
   return {
     mode: isEnvProduction ? 'production' : isEnvDevelopment && 'development',
