@@ -59,6 +59,7 @@ const resolveModule = (resolveFn, filePath) => {
 // config after eject: we're in ./config/
 module.exports = {
   dotenv: resolveApp('.env'),
+  themesJson: resolveApp('themes.json'),
   appPath: resolveApp('.'),
   appBuild: resolveApp('build'),
   appPublic: resolveApp('public'),
@@ -81,6 +82,7 @@ const resolveOwn = relativePath => path.resolve(__dirname, '..', relativePath);
 // config before eject: we're in ./node_modules/react-scripts/config/
 module.exports = {
   dotenv: resolveApp('.env'),
+  themesJson: resolveApp('themes.json'),
   appPath: resolveApp('.'),
   appBuild: resolveApp('build'),
   appPublic: resolveApp('public'),
@@ -116,6 +118,7 @@ if (
   const templatePath = '../cra-template/template';
   module.exports = {
     dotenv: resolveOwn(`${templatePath}/.env`),
+    themesJson: resolveApp('themes.json'),
     appPath: resolveApp('.'),
     appBuild: resolveOwn('../../build'),
     appPublic: resolveOwn(`${templatePath}/public`),
